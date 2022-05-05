@@ -1,0 +1,14 @@
+[
+    {"nombre":"Zapatillas Salomon X-raise","id":"01","precio":20000,"img":"https://sporting.vteximg.com.br/arquivos/ids/295642-1500-1500/1700420-000-2.jpg?v=637583597838270000"},
+    {"nombre":"Carpa Waterdog Terra II","id":"02","precio":18000,"img":"https://http2.mlstatic.com/D_NQ_NP_801762-MLA31008837298_062019-O.webp"},
+    {"nombre":"Mochila Ossprey Fugit 65lts","id":"03","precio":30000,"img":"https://universoventura.vteximg.com.br/arquivos/ids/174842-500-500/Farpoint-55-JASPER-RED-0.jpg?v=636736446619200000"},
+    {"nombre":"Campera Ansilta Aconcagua","id":"04","precio":38000,"img":"https://www.nakaoutdoors.com.ar/img/articulos/ansilta_rider_ski_1_imagen2.jpg"},
+    {"nombre":"Remera Termica Larga Flash UV","id":"05","precio":5000,"img":"https://http2.mlstatic.com/D_NQ_NP_761968-MLA45355146601_032021-O.jpg"},
+    {"nombre":"Pantalon Montagne Mindel Vert","id":"06","precio":16000,"img":"https://contents.mediadecathlon.com/p1844718/k$e1d1b46c9fb4298532fded56e81a7ea0/sq/Pantalon+modulable+de+randonn+e+montagne+MH550+Femme.jpg?f=700x700"},
+    {"nombre":"Zapatillas Hi-tec Bryce 2","id":"07","precio":22000,"img":"https://falabella.scene7.com/is/image/FalabellaPE/15257648_1?q=i?wid=800&hei=800&qlt=70"},
+    {"nombre":"Campera Columbia Waternight","id":"08","precio":27000,"img":"https://elsoldaditodeplomo.com.ar/wp-content/uploads/2019/11/Campera-Columbia-Watertight-Negra.jpg"},
+    {"nombre":"Mochila Waterdog Messner 50lts","id":"09","precio":25000,"img":"http://www.elpumapesca.com.ar/484-large_default/mochila-waterdog-cabrera-50-litros.jpg"},
+    {"nombre":"Carpa Doite Zolo 1","id":"10","precio":40000,"img":"https://www.completeoutdoors.co.nz/image/cache/data/doite-zolo-especial-closed-29186-360x360.jpg"},
+    {"nombre":"Guantes Ansilta Mercedario","id":"11","precio":12000,"img":"https://www.nakaoutdoors.com.ar/img/articulos/ansilta_mercedario_cubre_mitones_imagen1.jpg"},
+    {"nombre":"Pantalon The North Face Dromek","id":"12","precio":20000,"img":"https://content.backcountry.com/images/items/large/TNF/TNF03IY/BEEGN.jpg"}
+]
