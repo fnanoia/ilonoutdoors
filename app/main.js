@@ -5,6 +5,7 @@ let catalogoJSON;
 let botonAgregar;
 let total;
 let checkoutButtons;
+let carritoStorage;
 
 let lista = document.getElementById("pushear__items__catalogo");
 function renderItem (array) {
@@ -46,11 +47,8 @@ for (const boton of botonAgregar) {
 })
 .catch(console.log("Error"));
 
-//Recargar Home. ONCLICK
-document.getElementById("home__render").addEventListener("click", () =>{
-
-lista.innerHTML = "";
-checkoutButtons.innerHTML = "";
+//Recargar Productos. ONCLICK
+document.getElementById("productos__render").addEventListener("click", () =>{
 
 fetch("json/catalogo.json")
   .then((resp) => resp.json())
@@ -73,7 +71,7 @@ for (const boton of botonAgregar) {
     })
 }
 })
-.catch(console.log("Error"));
+ lista.innerHTML = "";
 });
 
 let compras = document.getElementById("pushear__compras");
@@ -110,7 +108,7 @@ document.getElementById("search__item__button").addEventListener("click", functi
                         backgroundColor: "rgb(223, 46, 46)",
                       }).showToast();
                 })}  
-    }else{lista.innerHTML = `<p>No existen resultados para su busqueda</p>`};
+    }else{lista.innerHTML = `<div class="alert__no__results">No existen resultados para su busqueda</div>`};
 });
 
 //Side bar
@@ -119,12 +117,15 @@ sideBarButton.addEventListener("click", () => {
     document.getElementById("menu").classList.toggle("sidebar__button__mostrar");
 })
 
-//Renderizar carrito local storage. ONCLICK. Incluye Checkout(a desarrollar)
+//Recargar carrito local storage.Incluye Checkout(a desarrollar)
 let carritoCounter = document.getElementById("carrito__contador");
-carritoCounter.addEventListener("click", () =>{
+carritoCounter.addEventListener("click", renderItemCarrito);
+carritoCounter.addEventListener("click", renderCheckout);
 
+function renderItemCarrito () {
     lista.innerHTML = "";
-    let carritoStorage = JSON.parse(localStorage.getItem("CarritoStorage")) || [];
+    carritoStorage = JSON.parse(localStorage.getItem("CarritoStorage")) || [];
+
     
     for (const producto of carritoStorage){
         let listaCatalogo = document.createElement("div");
@@ -137,12 +138,23 @@ carritoCounter.addEventListener("click", () =>{
         lista.appendChild(listaCatalogo);
         lista.classList.add("producto__catalogo");
         };
+}
 
-        checkoutButtons = document.getElementById("checkout__buttons");
+function renderCheckout () {
+    carritoStorage = JSON.parse(localStorage.getItem("CarritoStorage")) || [];
+
+    if(carritoStorage.length >= 1){
+    
+        checkoutButtons = document.createElement("div");
         checkoutButtons.innerHTML = `
         <button id="limpiar__carrito">Limpiar carrito</button>
         <button id="terminar__carrito">Terminar compra</button>
-        <div id="total__carrito"></div>`
+        <div id="total__carrito"></div>
+        `;
+        
+        checkoutButtons.setAttribute("id", "div__checkout");
+        lista.appendChild(checkoutButtons);
+
     
     document.getElementById("limpiar__carrito").addEventListener("click", () =>{
         lista.innerHTML= "";
@@ -169,6 +181,8 @@ carritoCounter.addEventListener("click", () =>{
 
     total.appendChild(totalAgregado);
     total.classList.add("total__agregado");
-});
+    }else{lista.innerHTML= `<div class="alert__no__results">Aun no se han agregado productos al carrito</div>`}
+}
+
 
 
