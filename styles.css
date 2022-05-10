@@ -1,12 +1,61 @@
+/*Colores
+rgb(166, 166, 166); blanco
+rgb(19, 19, 19); negro
+rgb(71, 65, 65); gris
+rgb(223, 46, 46), rojo claro
+rgb(156, 29, 29); rojo oscuro
+*/
+
+/*pruebas
+$color--negro: #3c3c3c;
+$color--gris: #666666;
+$color-blanco: #b5b5b5;
+
+
+*/
+
 *{
     color: white;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: 'Ubuntu Condensed', sans-serif;   /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;*/
     margin: 0;
     padding: 0;
 }
 
 body{
-    background-color: rgb(166, 166, 166);
+    background-color: #889293;
+}
+/*Home*/
+.home{
+    background-color: #474745;
+    text-align: center;
+    padding: 10px;
+}
+.home h1{
+    padding: 40px;
+    font-size: 80px;
+}
+
+/*Footer*/
+.footer{
+    background-color: #474745;
+    text-align: center;
+    padding: 10px;
+}
+.footer div{
+    margin-bottom: 10px;
+    padding: 5px;
+    font-size: 15px;
+}
+.footer p{
+    padding: 10px;
+    font-size: 10px;
+    text-align: right;
+}
+.footer .footer__social ul li{
+    display: inline-block;
+    text-align: center;
+    list-style: none;
+    padding: 10px 80px;
 }
 
 /*Menu*/
@@ -72,6 +121,7 @@ body{
     transition: 0.5s;
     background-color: rgb(19, 19, 19);
 }
+
 /*SEARCH BAR*/
 input{
     margin: 5px auto;
@@ -89,6 +139,7 @@ input{
     transition: 0.5s;
     background-color: rgb(71, 65, 65);
 }
+
 /*Cards*/
 .producto__catalogo {
     display: grid;
@@ -97,20 +148,20 @@ input{
     gap: 20px;
 }
 .producto__catalogo div{
-    background-color: rgb(71, 65, 65);
+    background-color: #474745;
     margin: 30px;
     padding: 5px;
     border-radius: 2%;
     text-align: center;
-    font-weight: 600;
+    font-weight: 300;
     box-shadow: 2px 2px 6px 0px  rgba(0,0,0,0.9);
 }
 .producto__catalogo div .render__div{
     width: auto;
-    background-color: rgb(71, 65, 65);
+    background-color: #474745;
     border-radius: 1%;
     padding: 0px 20px 20px;
-    font-weight: 600;
+    font-weight: 300;
 }
 .producto__catalogo div img{
     width: 200px;
@@ -118,6 +169,7 @@ input{
     border-radius: 1%;
     box-shadow: 2px 2px 6px 0px  rgba(0,0,0,0.5);
 }
+
 
 /*Botones*/
 .boton__agregar, .boton__quitar {
@@ -134,12 +186,16 @@ input{
     transition: 0.5s;
     background-color: rgb(156, 29, 29)
 }
+#checkout__buttons{
+    text-align: center;
+}
 #limpiar__carrito, #terminar__carrito{
     background-color: rgb(223, 46, 46);
     height: 40px;
     margin: 10px;
     padding: 5px 10px;
-    border-radius: 6%;
+    border-radius: 1%;
+    border-color: #474745;
 }
 #limpiar__carrito:hover{
     transition: 0.5s;
@@ -152,7 +208,7 @@ input{
 
 /*Total*/
 .total__agregado div{
-    background-color: rgb(156, 29, 29);
+    background-color: rgb(223, 46, 46);
     width: 240px;
     height: 30px;
     margin-left: auto;
@@ -160,5 +216,16 @@ input{
     padding: 5px;
     border-radius: 2%;
     text-align: center;
-    border: 2px solid rgb(19, 19, 19);
+    /*border: 2px solid rgb(19, 19, 19);*/
+}
+#total__carrito{
+    box-shadow: none;
+}
+#div__checkout{
+    height: 200px;
+}
+
+/*Alertas*/
+.alert__no__results{
+    text-align: center;
 }

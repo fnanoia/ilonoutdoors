@@ -7,6 +7,9 @@
     <title>ILON OUTDOORS</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Condensed&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -16,9 +19,9 @@
         </div>
         <ul>
         <li><img src="img/ilon logo.png" width="150px" class="logo"></li>
-        <li><a href="#" id="home__render">Home</a></li>
-        <li><a href="#">Produtos</a></li>
-        <li><a href="#" id="carrito__contador">Carrito <span id="carrito__contador__items"></span></a>
+        <li><a href="#">Home</a></li>
+        <li><a href="#" id="productos__render">Produtos</a></li>
+        <li><a href="#" id="carrito__contador">Carrito<span id="carrito__contador__items"></span></a>
         <div id="pushear__compras">
         </div>
         </li>
@@ -30,12 +33,28 @@
         </li>
         </ul>
 </div>
-<div id="catalogo">
+<nav class="home">
+    <h1>ILON OUTDOORS</h1>
+</nav>
 <div id="pushear__items__catalogo"></div>
 </div>
+<footer class="footer">
+    <div>
+        <div>Nosotros tambien estuvimos ahi, por eso nos especializamos en productos para realizar actividades de montaña</div>
+        <div>Todo lo que necesitas para empezar tu proxima aventura!</div>
+        <div class="footer__social">
+            <ul>
+                <li><a href="https://github.com/fnanoia"><img src="img/instagram_icon.png" width="50px"></a></li>
+                <li><a href="https://github.com/fnanoia"><img src="img/whatsapp_icon.png" width="50px"></a></li>
+                <li><a href="https://github.com/fnanoia"><img src="img/twitter_icon.png" width="50px"></a></li>
+                <li><a href="https://github.com/fnanoia"><img src="img/linkedin_icon.png" width="50px"></a></li>
+            </ul>
+        </div>
+    </div>
+    <p>written by Francisco Nanoia</p> 
+</footer>
 
-<div id="checkout__buttons"></div>
-<script src="app/entregable4.js" type="module"></script>
+<script src="app/main.js" type="module"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     
