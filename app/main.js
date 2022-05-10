@@ -6,6 +6,7 @@ let botonAgregar;
 let total;
 let checkoutButtons;
 let carritoStorage;
+let sumTotalStorage;
 
 let lista = document.getElementById("pushear__items__catalogo");
 function renderItemHome (array) {
@@ -57,6 +58,8 @@ function agregarItem(e) {
     carrito.push(clicked);
     localStorage.setItem("CarritoStorage", JSON.stringify(carrito));
 
+    let sumTotal = carrito.reduce( (total, clickedItem) => total + clickedItem.precio, 0);
+    localStorage.setItem("SumTotalStorage", JSON.stringify(sumTotal));
    /* let cantProdCarrito = document.getElementById("carrito__contador__items");
     cantProdCarrito.innerHTML = `(${carrito.length})`;*/
 }
@@ -90,6 +93,7 @@ sideBarButton.addEventListener("click", () => {
 let carritoCounter = document.getElementById("carrito__contador");
 carritoCounter.addEventListener("click", renderItemCarrito);
 carritoCounter.addEventListener("click", renderCheckout);
+carritoCounter.addEventListener("click", totalCheckout);
 
 function renderItemCarrito () {
     lista.innerHTML = "";
@@ -108,7 +112,7 @@ function renderItemCarrito () {
 }
 
 function renderCheckout () {
-    carritoStorage = JSON.parse(localStorage.getItem("CarritoStorage")) || [];
+    /*carritoStorage = JSON.parse(localStorage.getItem("CarritoStorage")) || [];*/
 
     if(carritoStorage.length >= 1){
     
@@ -133,17 +137,17 @@ function renderCheckout () {
       swalCheckout();
     });
 
-    total = document.getElementById("total__carrito");
-    let sumTotal = carrito.reduce( (total, clickedItem) => total + clickedItem.precio, 0); 
-    let totalAgregado = document.createElement("div"); 
-    if(sumTotal > 0){
-    totalAgregado.innerText = `Total $${sumTotal}`;}
-
-    total.appendChild(totalAgregado);
-    total.classList.add("total__agregado");
-
     }else{lista.innerHTML= `<div class="alert__no__results">Aun no se han agregado productos al carrito</div>`}
 }
 
+function totalCheckout () {
+    sumTotalStorage = JSON.parse(localStorage.getItem("SumTotalStorage"));
 
+    total = document.getElementById("total__carrito");
+    let totalAgregado = document.createElement("div"); 
+    if(sumTotalStorage > 0){
+    totalAgregado.innerText = `Total $${sumTotalStorage}`;}
 
+    total.appendChild(totalAgregado);
+    total.classList.add("total__agregado");
+}
