@@ -37,10 +37,8 @@ for (const boton of botonAgregar) {
     boton.addEventListener("click", agregarItem);
     boton.addEventListener("click", () =>{
     toastAdd();
-    })
-}
-})
-.catch(console.log("Error"));
+    })}
+});
 }
 fetchData();
 
@@ -60,6 +58,7 @@ function agregarItem(e) {
 
     let sumTotal = carrito.reduce( (total, clickedItem) => total + clickedItem.precio, 0);
     localStorage.setItem("SumTotalStorage", JSON.stringify(sumTotal));
+    
    /* let cantProdCarrito = document.getElementById("carrito__contador__items");
     cantProdCarrito.innerHTML = `(${carrito.length})`;*/
 }
@@ -112,17 +111,13 @@ function renderItemCarrito () {
 }
 
 function renderCheckout () {
-    /*carritoStorage = JSON.parse(localStorage.getItem("CarritoStorage")) || [];*/
-
     if(carritoStorage.length >= 1){
-    
         checkoutButtons = document.createElement("div");
         checkoutButtons.innerHTML = `
         <button id="limpiar__carrito">Limpiar carrito</button>
         <button id="terminar__carrito">Terminar compra</button>
         <div id="total__carrito"></div>`
         ;
-
         checkoutButtons.setAttribute("id", "div__checkout");
         lista.appendChild(checkoutButtons);
 
@@ -141,7 +136,7 @@ function renderCheckout () {
 }
 
 function totalCheckout () {
-    sumTotalStorage = JSON.parse(localStorage.getItem("SumTotalStorage"));
+    sumTotalStorage = JSON.parse(localStorage.getItem("SumTotalStorage")|| []);
 
     total = document.getElementById("total__carrito");
     let totalAgregado = document.createElement("div"); 
