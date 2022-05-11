@@ -16,11 +16,11 @@ const producto4 = new Producto ("Campera Ansilta Aconcagua", "04", 38000, "https
 const producto5 = new Producto ("Remera Termica Larga Flash UV", "05", 5000, "https://http2.mlstatic.com/D_NQ_NP_761968-MLA45355146601_032021-O.jpg");
 const producto6 = new Producto("Pantalon Montagne Mindel Vert", "06", 16000, "https://contents.mediadecathlon.com/p1844718/k$e1d1b46c9fb4298532fded56e81a7ea0/sq/Pantalon+modulable+de+randonn+e+montagne+MH550+Femme.jpg?f=700x700");
 const producto7 = new Producto("Zapatillas Hi-tec Bryce 2", "07", 22000, "https://falabella.scene7.com/is/image/FalabellaPE/15257648_1?q=i?wid=800&hei=800&qlt=70");
-const producto8= new Producto("Campera Columbia Waternight", "08", 27000, "https://elsoldaditodeplomo.com.ar/wp-content/uploads/2019/11/Campera-Columbia-Watertight-Negra.jpg");
-const producto9 = new Producto("Mochila Waterdog Messner 50lts", "09", 25000, "http://www.elpumapesca.com.ar/484-large_default/mochila-waterdog-cabrera-50-litros.jpg");
+const producto8 = new Producto("Campera Columbia Waternight", "08", 27000, "https://elsoldaditodeplomo.com.ar/wp-content/uploads/2019/11/Campera-Columbia-Watertight-Negra.jpg");
+const producto9 = new Producto("Mochila Waterdog Messner 50lts", "09", 25000, "https://galotiempolibre.online/wp-content/uploads/2020/08/mochila-cabrera50-waterdog-AG000406-1-768x768.jpg");
 const producto10 = new Producto("Carpa Doite Zolo 1", "10", 40000, "https://www.completeoutdoors.co.nz/image/cache/data/doite-zolo-especial-closed-29186-360x360.jpg");
 const producto11 = new Producto("Guantes Ansilta Mercedario", "11", 12000, "https://www.nakaoutdoors.com.ar/img/articulos/ansilta_mercedario_cubre_mitones_imagen1.jpg");
-const producto12= new Producto("Pantalon The North Face Dromek", "12", 20000, "https://content.backcountry.com/images/items/large/TNF/TNF03IY/BEEGN.jpg");
+const producto12 = new Producto("Pantalon The North Face Dromek", "12", 20000, "https://content.backcountry.com/images/items/large/TNF/TNF03IY/BEEGN.jpg");
 
 catalogo.push(producto1, producto2, producto3, producto4, producto5, producto6, producto7, producto8, producto9, producto10, producto11, producto12);
 
