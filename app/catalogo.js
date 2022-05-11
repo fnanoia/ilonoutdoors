@@ -24,6 +24,6 @@ const producto12= new Producto("Pantalon The North Face Dromek", "12", 20000, "h
 
 catalogo.push(producto1, producto2, producto3, producto4, producto5, producto6, producto7, producto8, producto9, producto10, producto11, producto12);
 
-const catalogoJSON = JSON.stringify(catalogo);
+/*const catalogoJSON = JSON.stringify(catalogo);*/
 
 export {catalogo};

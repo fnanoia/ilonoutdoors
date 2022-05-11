@@ -36,6 +36,8 @@ function toastAdd () {
         duration: 1000,
         gravity: "top", 
         position: "right", 
-        backgroundColor: "rgb(223, 46, 46)"
+        style: {
+        background: "rgb(223, 46, 46)",
+        }
       }).showToast();
 }
