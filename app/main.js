@@ -37,6 +37,8 @@ function renderItemHome (array) {
         listaCatalogo.innerHTML = `
         <h3 class="render__div">${producto.nombre}</h3>
         <img src="${producto.img}">
+        <p class="render__div__text">Lorem psum lorem igunh septum ipsum lorem beredinium toyenipsum lorem igunh septum ipsum lorem beredinium toyen</p>
+        <br>
         <p class="render__div">$${producto.precio}</p>
         <button class="boton__agregar" id="${producto.id}">Agregar</button>`
         ;
@@ -122,7 +124,7 @@ function renderItemCarrito () {
         <h3 class="render__div">${producto.nombre}</h3>
         <img src="${producto.img}"></img>
         <p class="render__div">$${producto.precio}</p>
-        <button class="boton__quitar" id="${producto.id}">X</button>`
+        <button class="boton__quitar" id="${producto.id}">Eliminar</button>`
         ;
         lista.appendChild(listaCatalogo);
         lista.classList.add("producto__catalogo");
