@@ -9,8 +9,6 @@ let checkoutButtons;
 let carritoStorage;
 let sumTotalStorage;
 
-
-
 //Fetch de JSON estatico, renderiza la pagina de inicio de la tienda
 function fetchData () {
 fetch("json/catalogo.json")
@@ -30,6 +28,7 @@ for (const boton of botonAgregar) {
 }
 fetchData();
 
+//Funcion para renderizar un array
 let lista = document.getElementById("pushear__items__catalogo");
 function renderItemHome (array) {
     for (const producto of array){
@@ -46,42 +45,20 @@ function renderItemHome (array) {
         lista.classList.add("producto__catalogo");
         }
 }
+
 //Recargar Home Page
 document.getElementById("home__render").addEventListener("click", () =>{
     fetchData();
     lista.innerHTML = "";
 });
 
-//Agrega item al carrito
-function agregarItem(e) {
-   
-    let clicked = catalogo.find((prod) => prod.id == e.target.id);
-    carrito.push(clicked);
-
-    //actualizo localstorage
+//Actualizar Local Storage
+function actualizarStorage() {
     localStorage.setItem("CarritoStorage", JSON.stringify(carrito));
     let sumTotal = carrito.reduce( (total, clickedItem) => total + clickedItem.precio, 0);
     localStorage.setItem("SumTotalStorage", JSON.stringify(sumTotal));
-    
-   /* let cantProdCarrito = document.getElementById("carrito__contador__items");
-    cantProdCarrito.innerHTML = `(${carrito.length})`;*/
 }
-//Elimina item del carrito
-function quitarItem(e){
 
-    let unClicked = carrito.find((prod) => prod.id == e.target.id);
-    let undoClicked = carrito.indexOf(unClicked);
-    if(undoClicked !== -1){carrito.splice(undoClicked, 1)};
-
-    //Actualizar localstorage
-    localStorage.setItem("CarritoStorage", JSON.stringify(carrito));
-    let sumTotal = carrito.reduce( (total, clickedItem) => total + clickedItem.precio, 0);
-    localStorage.setItem("SumTotalStorage", JSON.stringify(sumTotal));
-
-    //Renderizo todo menos lo que elimine
-    renderItemCarrito();
-    renderCheckout();
-}
 //Search bar
 document.getElementById("search__item__button").addEventListener("click", function (e){
 
@@ -99,8 +76,10 @@ document.getElementById("search__item__button").addEventListener("click", functi
         boton.addEventListener("click", () =>{
         toastAdd();
     })}  
-
-    }else{lista.innerHTML = `<div class="alert__no__results">No existen resultados para su busqueda</div>`};
+    }else{lista.innerHTML = `<div class="alert__no__results">No existen resultados para su busqueda</div>`;
+    setTimeout(()=> {
+        lista.innerHTML= "";
+        fetchData();}, 2000);}
 });
 
 //Side Bar Menu
@@ -109,6 +88,32 @@ sideBarButton.addEventListener("click", () => {
     document.getElementById("menu").classList.toggle("sidebar__button__mostrar");
 })
 
+//Agrega item al carrito
+function agregarItem(e) {
+   
+    let clicked = catalogo.find((prod) => prod.id == e.target.id);
+    carrito.push(clicked);
+
+    //Actualizo localstorage
+    actualizarStorage();
+}
+
+//Elimina item del carrito
+function quitarItem(e){
+
+    let unClicked = carrito.find((prod) => prod.id == e.target.id);
+    let undoClicked = carrito.indexOf(unClicked);
+    if(undoClicked !== -1){carrito.splice(undoClicked, 1)};
+
+    //Actualizar localstorage
+    actualizarStorage();
+
+    //Renderizo todo menos lo que elimine
+    renderItemCarrito();
+    renderCheckout();
+}
+
+//Eventos para menu>Carrito
 let carritoCounter = document.getElementById("carrito__contador");
 carritoCounter.addEventListener("click", renderItemCarrito);
 carritoCounter.addEventListener("click", renderCheckout);
@@ -130,20 +135,22 @@ function renderItemCarrito () {
         lista.classList.add("producto__catalogo");
         };
 
+    //Eliminar producto del carrito
     botonQuitar = document.querySelectorAll(".boton__quitar");
     for (const boton of botonQuitar) {
             boton.addEventListener("click", quitarItem);
         };
 }
+
 //Render CheckOut Box. Se muestra cuando existen productos en el carrito
 function renderCheckout () {
     if(carritoStorage.length >= 1){
         checkoutButtons = document.createElement("div");
         checkoutButtons.innerHTML = `
-        <button id="limpiar__carrito">Limpiar carrito</button>
         <button id="terminar__carrito">Terminar compra</button>
         <div id="total__carrito"></div>`
         ;
+    
         checkoutButtons.setAttribute("id", "div__checkout");
         lista.appendChild(checkoutButtons);
 
@@ -156,18 +163,12 @@ function renderCheckout () {
         total.classList.add("total__agregado");}
 
         //Eventos de botones
-        document.getElementById("limpiar__carrito").addEventListener("click", () =>{
-        localStorage.clear();
-        lista.innerHTML= "";
-        checkoutButtons.innerHTML = "";
-        setTimeout(()=> {fetchData();}, 1500);
-        });
-
-
-        //Eventos de botones
         document.getElementById("terminar__carrito").addEventListener("click", () =>{
          swalCheckout();
         });
 
-    }else{lista.innerHTML= `<div class="alert__no__results">Aun no se han agregado productos al carrito</div>`} 
+    }else{lista.innerHTML= `<div class="alert__no__results">Aun no se han agregado productos al carrito</div>`;
+    setTimeout(()=> {
+        lista.innerHTML= "";
+        fetchData();}, 2000);}
 }

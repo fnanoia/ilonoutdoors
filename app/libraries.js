@@ -9,6 +9,11 @@ const swal = Swal.mixin({
   
   swal.fire({
     title: 'Confirmar compra?',
+    html: 
+    `<form>
+    <input type="text" class="input__swal" name="nombre" placeholder="Nombre"><br>
+    <input type="text" class="input__swal" name="email" placeholder="Email"><br>
+    </form>`,
     showCancelButton: true,
     confirmButtonText: 'Comprar!',
     cancelButtonText: 'Cancelar',
@@ -19,12 +24,9 @@ const swal = Swal.mixin({
         'Hecho!',
         'Gracias por confiar en ILON OUTDOORS',
         'success')
-    }else if (result.dismiss === Swal.DismissReason.cancel){
-        swal.fire(
-        'Cancelada',
-        'Esperamos volver a verte pronto',
-        'error'
-      )}
+    }
+  
+  
 });
 }
 

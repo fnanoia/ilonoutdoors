@@ -1,12 +1,3 @@
-/*Colores
-rgb(166, 166, 166); blanco
-rgb(19, 19, 19); negro
-rgb(71, 65, 65); gris
-rgb(223, 46, 46), rojo claro
-rgb(156, 29, 29); rojo oscuro
-*/
-
-
 *{
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     margin: 0;
@@ -219,18 +210,6 @@ input{
 #checkout__buttons{
     text-align: center;
 }
-#limpiar__carrito{
-    background-color:#474745;
-    color: white;
-    height: 40px;
-    margin: 10px;
-    padding: 5px 10px;
-    border-radius: 1%;
-}
-#limpiar__carrito:hover{
-    transition: 0.5s;
-    background-color: rgb(156, 29, 29)
-}
 #terminar__carrito{
     background-color:#474745;
     color: white;
@@ -267,6 +246,12 @@ input{
 .boton__cancelar:hover{
     transition: 0.5s;
     background-color: rgb(156, 29, 29)
+}
+/*Input Sweet Alert*/
+.input__swal{
+    width: 400px;
+    height: 30px;
+    margin: 5pxpx;
 }
 
 /*Total*/
