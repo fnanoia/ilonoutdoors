@@ -9,8 +9,6 @@ const swal = Swal.mixin({
   
   swal.fire({
     title: 'Confirmar compra?',
-    /*text: "You won't be able to revert this!",*/
-    /*icon: 'warning',*/
     showCancelButton: true,
     confirmButtonText: 'Comprar!',
     cancelButtonText: 'Cancelar',
@@ -37,7 +35,7 @@ function toastAdd () {
         gravity: "top", 
         position: "right", 
         style: {
-        background: "rgb(223, 46, 46)",
+        background: "#33691E",
         }
       }).showToast();
 }
